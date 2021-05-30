@@ -21,6 +21,8 @@ $router->get('/key', function() {
     return \Illuminate\Support\Str::random(32);
 });
 
+$router->post('api/login', 'AuthController@login');
+
 $router->group(['prefix' => 'api'], function() use ($router) {
     $router->get('posts', 'PostController@index');
     $router->post('posts', 'PostController@store');
